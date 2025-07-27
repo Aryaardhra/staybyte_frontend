@@ -13,3 +13,16 @@
   --color-secondary : #FBBF24
   --text-text:oklch(0.32 0.01 0);
 }
+
+.hero_img{
+  animation: Anim-zoom 2.5s 1.4s forwards linear;
+}
+@keyframes Anim-zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}

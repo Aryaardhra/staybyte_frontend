@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 const Hero = () => {
   return (
     <>
-    <div className= "flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-[#0a153599] bg-[url(/src/assets/hero.png)] bg-no-repeat bg-cover bg-center h-screen">
+    <div className= " hero_img flex flex-col items-start justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-[#0a153599] bg-[url(/src/assets/hero.png)] bg-no-repeat bg-cover bg-center h-screen">
       <p className="bg-[#384ceb1c] px-3 5 py-1 rounded-full mt-20">Dónde puedo conseguirlo</p>
       <h1 className="font-playfair text-2xl md:text-[56px] md:leading-[56px] font-bold md:font-extrabold max-w-xl mt-4">
         Ipsum como su texto por defecto
