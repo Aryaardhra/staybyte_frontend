@@ -8,6 +8,7 @@ import Layout from "../pages/hotelOwner/Layout";
 import Dashboard from "../pages/hotelOwner/Dashboard";
 import AddRoom from "../pages/hotelOwner/AddRoom";
 import ListAllRooms from "../pages/hotelOwner/ListAllRooms";
+import { AppProvider } from "../context/AppContext";
 
 const router = createBrowserRouter([
 
@@ -15,7 +16,9 @@ const router = createBrowserRouter([
     {
         path : "/",
         element: (
+              <AppProvider>
               <App />
+              </AppProvider>
              ),
              
         children : [

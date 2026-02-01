@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {assets} from "../../src/assets/assets"
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react';
+import { useAppContext } from '../context/AppContext';
 
 const BookIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -27,10 +28,10 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const {openSignIn} = useClerk();
-    const {user} = useUser();
 
-    const navigate = useNavigate();
     const location = useLocation();
+
+    const { user, navigate, isOwner, setShowHotelReg } = useAppContext();
 
     useEffect(() => {
 
@@ -67,10 +68,13 @@ const Navbar = () => {
                         </a>
                     ))}
                     {
-                        user && 
-                        <button onClick={()=> navigate("/owner")} className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-[#091440c7]'} transition-all`}>
-                        Dashboard
+                        user && (
+                        <button  className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? 'text-black' : 'text-[#091440c7]'} transition-all`}
+                        onClick = { () => isOwner ? navigate("/owner") : setShowHotelReg(true)}
+                        >
+                        { isOwner ? "Dashboard" : "List Your Hotel"}
                     </button>
+                        )
                     }
                 </div>
 
@@ -122,8 +126,10 @@ const Navbar = () => {
 
                    {
                     user && 
-                     <button onClick={()=> navigate("/owner")} className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
-                        Dashboard
+                     <button 
+                     onClick = { () => isOwner ? navigate("/owner") : setShowHotelReg(true)}
+                     className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all">
+                        { isOwner ? "Dashboard" : "List Your Hotel"}
                     </button>
                    }
 
