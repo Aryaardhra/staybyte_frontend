@@ -9,6 +9,7 @@ import Dashboard from "../pages/hotelOwner/Dashboard";
 import AddRoom from "../pages/hotelOwner/AddRoom";
 import ListAllRooms from "../pages/hotelOwner/ListAllRooms";
 import { AppProvider } from "../context/AppContext";
+import Loader from "../components/Loader";
 
 const router = createBrowserRouter([
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
             {path : "/rooms", element : <Rooms /> },
             {path : "/rooms/:id", element : <RoomDetails /> },
             {path : "/my-bookings", element : <MyBookings /> },
+            {path : "/loader/:nextUrl", element : <Loader /> },
             {path: "*", element: "NotFound"},
 
                    {
