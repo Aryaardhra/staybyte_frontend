@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 const RoomDetails = () => {
 
     const {id} = useParams();
-    const {rooms, getToken, axios, navigate} = useAppContext();
+    const {rooms, getToken, axios, navigate, currency} = useAppContext();
     const [room, setRoom] = useState(null);
     const [mainImage, setMainImage] = useState(null);
     const [checkInDate, setCheckInDate] = useState(null);
@@ -54,6 +54,7 @@ const RoomDetails = () => {
                 const {data} = await axios.post('/api/bookings/book', {room:id, checkInDate, checkOutDate, guests, paymentMethod : "Pay At Hotel"},
                  {headers : {Authorization: `Bearer ${await getToken()}`}}   
                 )
+                console.log(checkInDate, checkOutDate)
                 if(data.success){
                     toast.success(data.message)
                     navigate("/my-bookings")
@@ -137,7 +138,7 @@ const RoomDetails = () => {
             {/*room price */}
 
             <p className="text-2xl font-medium">
-                ${room.pricePerNight}/night
+                {currency} {room.pricePerNight}/night
             </p>
         </div>
 
