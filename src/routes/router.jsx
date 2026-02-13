@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {path : "/", element : <Home /> },
             {path : "/rooms", element : <Rooms /> },
             {path : "/rooms/:id", element : <RoomDetails /> },
-            {path : "/bookings", element : <MyBookings /> },
+            {path : "/my-bookings", element : <MyBookings /> },
             {path : "/loader/:nextUrl", element : <Loader /> },
             {path: "*", element: "NotFound"},
 
