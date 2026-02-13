@@ -57,7 +57,7 @@ const MyBookings = () => {
             </div>
 
             {
-                bookings.map((booking) => (
+                bookings?.map((booking) => (
                     <div className="grid grid-cols md:grid-cols-[3fr_2fr_1fr] w-full border-b border-gray-300 py-6 first:border-t">
                         {/*==================hotel details============================*/}
                         <div className="flex flex-col md:flex-row">
