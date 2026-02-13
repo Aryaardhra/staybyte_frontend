@@ -15,7 +15,7 @@ const MyBookings = () => {
                 Authorization : `Bearer ${await getToken()}`
             }})
             if (data.success){
-                setBookings(data.orders)
+                setBookings(data.bookings)
             } else {
                 toast.error(data.message)
             }
