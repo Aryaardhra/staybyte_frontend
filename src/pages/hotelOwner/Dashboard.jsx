@@ -77,7 +77,7 @@ const Dashboard = () => {
             </thead>
 
             <tbody className="text-sm">
-               { dashboardData.bookings.map((item, index) => (
+               { dashboardData?.bookings?.map((item, index) => (
                 <tr key={index} >
                     <td className="py-3 px-4 text-gray-700 border-gray-300">
                         {item.user.username}
