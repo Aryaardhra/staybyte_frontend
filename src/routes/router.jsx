@@ -24,13 +24,13 @@ const router = createBrowserRouter([
              ),
              
         children : [
-            /*{path : "/", element : <Home /> },*/
+            /*{path : "/", element : <Home /> },
             {path : "/rooms", element : <Rooms /> },
             {path : "/rooms/:id", element : <RoomDetails /> },
             {path : "/my-bookings", element : <MyBookings /> },
             {path : "/loader/:nextUrl", element : <Loader /> },
-            {path : "/", element : <Error /> },
-            {path: "*", element: "NotFound"},
+            {path: "*", element: "NotFound"},*/
+             {path : "/", element : <Error /> },
 
                    {
         path: 'owner',
