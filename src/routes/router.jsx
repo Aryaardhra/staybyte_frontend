@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-//import Home from "../pages/Home";
+import Home from "../pages/Home";
 import Rooms from "../pages/Rooms";
 import RoomDetails from "../pages/RoomDetails";
 import MyBookings from "../pages/MyBookings";
@@ -10,7 +10,8 @@ import AddRoom from "../pages/hotelOwner/AddRoom";
 import ListAllRooms from "../pages/hotelOwner/ListAllRooms";
 import { AppProvider } from "../context/AppContext";
 import Loader from "../components/Loader";
-import Error from "../pages/Error";
+
+//import Error from "../pages/Error";
 
 const router = createBrowserRouter([
 
@@ -24,13 +25,13 @@ const router = createBrowserRouter([
              ),
              
         children : [
-            /*{path : "/", element : <Home /> },
+            {path : "/", element : <Home /> },
             {path : "/rooms", element : <Rooms /> },
             {path : "/rooms/:id", element : <RoomDetails /> },
             {path : "/my-bookings", element : <MyBookings /> },
             {path : "/loader/:nextUrl", element : <Loader /> },
-            {path: "*", element: "NotFound"},*/
-             {path : "/", element : <Error /> },
+            {path: "*", element: "NotFound"},
+            /* {path : "/", element : <Error /> },*/
 
                    {
         path: 'owner',
